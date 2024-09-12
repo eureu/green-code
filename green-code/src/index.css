@@ -4,26 +4,6 @@
   box-sizing: border-box;
 }
 
-.header {
-  /* Frame 2 */
-
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 8px 156px;
-  gap: 62px;
-
-  position: absolute;
-  width: 1440px;
-  height: 100px;
-  left: 0px;
-  top: 0px;
-
-  /* базированный белый
-
-это база
-
-*/
-  background: #f8f8f8;
+.custom-header {
+  background-color: yellow;
 }

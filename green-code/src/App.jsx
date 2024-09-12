@@ -1,5 +1,7 @@
 // import "./App.css";
 import AppHeader from "./components/AppHeader.jsx";
+import AppMain from "./components/AppMain.jsx";
+import { Layout, ConfigProvider } from "antd";
 
 // function App() {
 //   <AppHeader />;
@@ -8,5 +10,17 @@ import AppHeader from "./components/AppHeader.jsx";
 // export default App;
 
 export default function App() {
-  return <AppHeader />;
+  return (
+    <ConfigProvider
+      theme={{
+        token: {
+          colorBgHeader: "#111111"
+        }
+      }}
+    >
+      <AppHeader />
+    </ConfigProvider>
+
+    // <AppMain />
+  );
 }
