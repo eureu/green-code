@@ -3,8 +3,12 @@ import { Button } from "antd";
 export default function AppContent() {
   return (
     // <Layout>
-    <div className="caplya">
-      <img src="./images/image.png" alt="cartoshka" />
+    <div className="caplya" style={{ display: "flex" }}>
+      <img
+        src="../../public/image.png"
+        alt="cartoshka"
+        style={{ height: "467px", width: "428px" }}
+      />
       <section>
         <h3>Уникальная экосистема парков и заповедников</h3>
         <p>
@@ -23,6 +27,8 @@ export default function AppContent() {
         </p>
         <Button>find park</Button>
       </section>
+
+      {/* <img src="../../public/caplya.png" alt="necaplya" /> */}
     </div>
 
     // </Layout>
