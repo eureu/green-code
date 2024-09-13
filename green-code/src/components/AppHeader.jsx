@@ -20,7 +20,9 @@ export default function AppHeader() {
           className="title"
           style={{
             marginLeft: "1rem",
-            lineHeight: "1.2"
+            lineHeight: "1.2",
+            color: "#000",
+            fontSize: "24px"
           }}
         >
           <strong>Красная книга Москвы</strong>
@@ -33,12 +35,25 @@ export default function AppHeader() {
             width: "100%"
           }}
         >
-          <a href="#">parks</a>
-          <a href="#" type="primary">
-            animals
+          <a href="#" style={{ fontSize: "24px", color: "#353535" }}>
+            Парки
           </a>
-          <a href="#">about us</a>
-          <Button type="primary">sign in</Button>
+          <a href="#" style={{ fontSize: "24px", color: "#353535" }}>
+            Животные
+          </a>
+          <a href="#" style={{ fontSize: "24px", color: "#353535" }}>
+            О чем этот проект?
+          </a>
+          <Button
+            type="primary"
+            style={{
+              width: "137px",
+              height: "53px",
+              backgroundColor: "#6FB0A5"
+            }}
+          >
+            <span style={{ fontSize: "24px" }}>Войти</span>
+          </Button>
         </Flex>
       </div>
     </Layout.Header>
