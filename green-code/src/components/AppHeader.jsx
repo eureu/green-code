@@ -1,5 +1,7 @@
 import { Layout, Button, Flex } from "antd";
 
+const fontStyle = { fontSize: "24px", color: "#353535" };
+
 export default function AppHeader() {
   return (
     <Layout.Header
@@ -35,13 +37,13 @@ export default function AppHeader() {
             width: "100%"
           }}
         >
-          <a href="#" style={{ fontSize: "24px", color: "#353535" }}>
+          <a href="#" style={fontStyle}>
             Парки
           </a>
-          <a href="#" style={{ fontSize: "24px", color: "#353535" }}>
+          <a href="#" style={fontStyle}>
             Животные
           </a>
-          <a href="#" style={{ fontSize: "24px", color: "#353535" }}>
+          <a href="#" style={fontStyle}>
             О чем этот проект?
           </a>
           <Button
