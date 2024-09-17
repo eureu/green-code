@@ -5,9 +5,56 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <!-- <script
+      src="https://api-maps.yandex.ru/v3/?apikey=23ddfe23-c93a-461d-a158-a1bf881fe498
+&lang=ru_RU"
+      type="text/javascript"
+    ></script> -->
   </head>
   <body>
     <div id="root"></div>
+    {/* API YANDEX MAPS */}
+
+    <!-- <div id="map" style="width: 600px; height: 400px"></div>
+    <script>
+      initMap();
+
+      async function initMap() {
+        await ymaps3.ready;
+
+        const { YMap, YMapDefaultSchemeLayer } = ymaps3;
+
+        const map = new YMap(document.getElementById("map"), {
+          location: {
+            center: [37.588144, 55.733842],
+            zoom: 10
+          }
+        });
+
+        map.addChild(new YMapDefaultSchemeLayer());
+      }
+
+      ymaps.ready(initMap);
+
+      function initMap() {
+        // Проверка на доступность ymaps
+        if (typeof ymaps !== "undefined") {
+          const map = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 10
+          });
+
+          const placemark = new ymaps.Placemark([55.76, 37.64], {
+            hintContent: "Москва!",
+            balloonContent: "Столица России"
+          });
+
+          map.geoObjects.add(placemark);
+        } else {
+          console.error("Yandex Maps API не загружен.");
+        }
+      }
+    </script> -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
