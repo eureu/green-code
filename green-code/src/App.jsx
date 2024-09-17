@@ -1,16 +1,12 @@
+import LayoutPage from "./components/Layout.jsx";
+import { Link, Route, Routes } from "react-router-dom";
 import AppHeader from "./components/AppHeader.jsx";
-import { Layout } from "antd";
-import AppContent from "./components/AppContent.jsx";
-import ParkMap from "./components/ParkMap.jsx";
 
 export default function App() {
   return (
-    <Layout>
-      <AppHeader />
-      <Layout>
-        <AppContent />
-      </Layout>
-      <ParkMap />
-    </Layout>
+    <Routes>
+      <Route path="/" element={<LayoutPage />} />
+      <Route path="/parks" element={<AppHeader />} />
+    </Routes>
   );
 }

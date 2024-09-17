@@ -1,17 +1,10 @@
-import { Layout, Button, Flex } from "antd";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import ParkMap from "./ParkMap.jsx";
+import { Button, Flex } from "antd";
+import { Link } from "react-router-dom";
 
 const fontStyle = { fontSize: "24px", color: "#353535" };
 
 export default function AppHeader() {
   return (
-    // <Router>
-    // <Layout.Header
-    //   className="header-main"
-    // style={{ height: "100px", backgroundColor: "#f8f8f8", width: "100%" }}
-    // >
-
     <header
       style={{ height: "100px", backgroundColor: "#f8f8f8", width: "100%" }}
     >
@@ -43,26 +36,16 @@ export default function AppHeader() {
             width: "100%"
           }}
         >
-          {/* <Link to="/parks" style={fontStyle}>
+          <Link to="/parks" style={fontStyle}>
             Парки
           </Link>
-          <Link to="#" style={fontStyle}>
-            Животные
+
+          <Link to="/parks" style={fontStyle}>
+            Парки
           </Link>
-          <Link to="#" style={fontStyle}>
-            О чем этот проект?
-          </Link> */}
-
-          <a href="#" style={fontStyle}>
+          <Link to="/parks" style={fontStyle}>
             Парки
-          </a>
-
-          <a href="#" style={fontStyle}>
-            Парки
-          </a>
-          <a href="#" style={fontStyle}>
-            Парки
-          </a>
+          </Link>
           <Button
             type="primary"
             style={{
@@ -75,11 +58,6 @@ export default function AppHeader() {
           </Button>
         </Flex>
       </div>
-      {/* </Layout.Header> */}
     </header>
-    // <Routes>
-    //   <Route path="/parks" element={<ParkMap />} />
-    // </Routes>
-    // </Router>
   );
 }

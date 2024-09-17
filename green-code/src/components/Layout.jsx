@@ -1,6 +1,16 @@
-import { Link } from "react-router-dom";
-import AppHeader from "./AppHeader";
+import AppHeader from "./AppHeader.jsx";
+import { Layout } from "antd";
+import AppContent from "./AppContent.jsx";
+import ParkMap from "./ParkMap.jsx";
 
-const Layout = () => {
-  return <AppHeader />;
-};
+export default function LayoutPage() {
+  return (
+    <Layout>
+      <AppHeader />
+      <Layout>
+        <AppContent />
+      </Layout>
+      <ParkMap />
+    </Layout>
+  );
+}
