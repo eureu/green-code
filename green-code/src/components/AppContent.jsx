@@ -1,5 +1,6 @@
 import AppContentText from "./AppContentText.jsx";
 import AppContentBackgroundImage from "./AppContentBackgroundImage.jsx";
+import Map from './Map/Map.tsx'
 
 export default function AppContent() {
   return (
@@ -11,6 +12,7 @@ export default function AppContent() {
         display: "flex"
       }}
     >
+      <Map/>
       <AppContentBackgroundImage />
       <AppContentText />
     </div>
