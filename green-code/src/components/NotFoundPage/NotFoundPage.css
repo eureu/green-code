@@ -1,0 +1,37 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Высота на весь экран */
+  text-align: center;
+  background-color: #f8f9fa; /* Светлый фон */
+  color: #343a40; /* Темный текст */
+  font-family: "Inter";
+}
+
+.not-found__title {
+  font-size: 6rem; /* Размер заголовка */
+  margin: 0;
+}
+
+.not-found__message {
+  font-size: 1.5rem; /* Размер сообщения */
+}
+
+.not-found__description {
+  margin: 10px 0;
+}
+
+.not-found__link {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6fb0a5; /* Цвет кнопки */
+  color: white; /* Цвет текста */
+  text-decoration: none; /* Убираем подчеркивание */
+  border-radius: 5px; /* Скругление углов */
+}
+
+.not-found__link:hover {
+  background-color: #0056b3; /* Цвет кнопки при наведении */
+}
