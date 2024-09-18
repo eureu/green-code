@@ -1,10 +1,14 @@
 import { Button, Flex } from "antd";
 import { Link } from "react-router-dom";
+import {useState} from 'react';
+import ModalAddAnimal from './ModalAddAnimal/ModalAddAnimal.tsx'
 
 const fontStyle = { fontSize: "16px", color: "#FAF2F2" };
 
 export default function AppHeader() {
-  return (
+  const [modalOpen, setModalOpen] = useState(false)
+ 
+  return (<>
     <header
       style={{ height: "48px", backgroundColor: "#6FB0A5", width: "100%" }}
     >
@@ -69,8 +73,11 @@ export default function AppHeader() {
           >
             <span style={{ fontSize: "24px" }}>Войти</span>
           </Button> */}
+          <button style={{color: '#353535', padding: '4px 16px', backgroundColor: '#F8F8F8', borderRadius: '8px', border: 'none'}} onClick={() => {setModalOpen(true)}}>Загрузить фото</button>
         </Flex>
       </div>
     </header>
+    <ModalAddAnimal setModalOpen={setModalOpen} modalOpen={modalOpen}/>
+    </>
   );
 }
