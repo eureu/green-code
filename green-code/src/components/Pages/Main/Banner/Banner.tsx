@@ -14,9 +14,11 @@ const mainContentFindParkButton = {
 const Banner = () => {
     return (
         <div className={style.banner}>
+        <div className={style.inner_banner}>
             <h3>Внеси свой вклад в обновление данных о редких видах</h3>
             <p>Если увидели в парке краснокнижное животное или растение, покажите нам фото: это поможет экологам точнее определять ареал обитания редких видов</p>
             <Button style={mainContentFindParkButton}>Загрузить фото</Button>
+        </div>
         </div>
     )
 }

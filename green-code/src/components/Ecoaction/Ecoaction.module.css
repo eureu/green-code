@@ -1,3 +1,11 @@
+.ecoactions {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: flex-start;
+    margin-bottom: 34px;
+}
+
 .ecoaction_img {
     font-size: 20px;
     font-weight: 700;
@@ -21,4 +29,5 @@ a {
     color: black;
     text-decoration: underline;
     font-size: 16px;
+    margin-top: -12px;
 }

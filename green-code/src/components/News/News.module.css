@@ -1,9 +1,8 @@
 .news {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     justify-content: flex-start;
-    gap: 12px;
     margin-bottom: 34px;
 
 }
@@ -27,4 +26,5 @@ a {
     color: black;
     text-decoration: underline;
     font-size: 16px;
+    margin-top: -12px;
 }

@@ -14,7 +14,7 @@ const mainContentFindParkButton = {
 const Ecoactions = () => {
 
     return(
-    <div className="news">
+    <div className={style.ecoactions}>
         <h2>Экодвижения</h2>
         <div className={style.ecoaction}>
             <img className={style.ecoaction_img} src=".../../../public/icons/ecoactions/ActionECA.svg"/>
