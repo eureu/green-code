@@ -13,7 +13,9 @@ export default function AppHeader() {
         style={{
           display: "flex",
           padding: "0 0 0 3rem",
-          height: "48px"
+          height: "48px",
+          position: "fixed",
+          top: 0
         }}
       >
         <img
@@ -43,7 +45,8 @@ export default function AppHeader() {
           style={{
             justifyContent: "space-evenly",
             alignItems: "center",
-            width: "100%"
+            width: "100%",
+            display: "none"
           }}
         >
           <Link to="/animals" style={fontStyle}>

@@ -1,6 +1,7 @@
 import AppHeader from "./AppHeader";
 import Footer from "./Footer";
 import Finder from "./Finder/Finder";
+import "./Finder/Finder.css";
 import News from "./News/News.tsx";
 import "./News/News.module.css";
 import Ecoactions from "./Ecoaction/Ecoaction.tsx";
@@ -26,7 +27,7 @@ export default function Parks() {
           </section>
 
           <div>
-            <Finder />
+            <Finder text={"Найти парк"} placeholder={"Зарядье"} />
             <div
               className="park-list-element"
               style={{

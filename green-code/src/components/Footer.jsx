@@ -5,32 +5,6 @@ const fontStyle = { fontSize: "16px", color: "#FAF2F2" };
 
 export default function Footer() {
   return (
-    // <footer
-    // style={{
-    //   height: "48px",
-    //   backgroundColor: "#6FB0A5",
-    //   width: "100%",
-    //   position: "fixed",
-    //   bottom: "0",
-    //   display: "flex",
-    //   alignItems: "center"
-    //   // justifyContent: "center"
-    // }}
-    // >
-    //   <div style={{ display: "flex" }}>
-    //     <Flex
-    //       style={{
-    //         justifyContent: "space-evenly",
-    //         alignItems: "center",
-    //         width: "100%",
-    //         position: "absolute"
-    //       }}
-    //     >
-    //       <Link>Contacts</Link>
-    //       <Link>sing in as an employe</Link>
-    //     </Flex>
-    //   </div>
-    // </footer>
     <footer
       style={{
         height: "48px",
