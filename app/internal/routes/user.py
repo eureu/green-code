@@ -59,6 +59,10 @@ async def get_animals():
     return {"data": await db.get_animals(bd_name)}
 
 
+@router.get("/get_plants")
+async def get_plants():
+    return {"data": await db.get_plants(bd_name)}
+
 @router.get("/get_mushroom")
 async def get_mushroom():
     return {"data": await db.get_mushroom(bd_name)}

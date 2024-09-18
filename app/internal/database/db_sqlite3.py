@@ -7,8 +7,8 @@ from datetime import datetime
 warnings.simplefilter("always")
 
 
-async def create_tables(DB_PATH):
-    try:
+def create_tables(DB_PATH):
+    # try:
         connection = sqlite3.connect(DB_PATH)
         cursor = connection.cursor()
 
@@ -52,8 +52,10 @@ async def create_tables(DB_PATH):
 
         connection.commit()
         connection.close()
-    except Exception as ex:
-        print(f"[ERROR] Dont create db: {ex}")
+
+    #     print("ok")
+    # except Exception as ex:
+    #     print(f"[ERROR] Dont create db: {ex}")
 
 
 async def add_park(DB_PATH, name, description, metro, address, cord, image):
@@ -281,4 +283,27 @@ async def get_photo(DB_PATH):
 
 
 if __name__ == '__main__':
-    create_tables("database/database.db")
+    ...
+    # get_animals("")
+
+    # conn = sqlite3.connect('../../../database/database.db')
+    # cursor = conn.cursor()
+    #
+    # # ID элемента, который нужно удалить
+    # id_to_delete = 6
+    #
+    # # SQL-запрос для удаления элемента
+    # sql = "DELETE FROM types_red_book WHERE id = ?"
+    #
+    # # Выполнение запроса с ID элемента
+    # cursor.execute(sql, (id_to_delete,))
+    #
+    # # Сохранение изменений в базе данных
+    # conn.commit()
+    #
+    # # Закрытие соединения с базой данных
+    # conn.close()
+    #
+    # print(f"Элемент с ID {id_to_delete} удален.")
+
+    # create_tables("../../../database/database.db")
