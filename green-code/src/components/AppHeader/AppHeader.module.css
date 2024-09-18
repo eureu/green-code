@@ -1,0 +1,17 @@
+.flex {
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .flex {
+    display: none;
+  }
+}
+
+/* style={{
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  width: "100%"
+}} */

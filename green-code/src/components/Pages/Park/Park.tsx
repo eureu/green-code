@@ -3,7 +3,7 @@ import React from "react";
 import style from "./Park.module.css";
 // import Banner from './Banner/Banner';
 import PhotoCreature from "../Main/PhotoCreature/PhotoCreature.tsx";
-import AppHeader from "../../AppHeader.jsx";
+import AppHeader from "../../AppHeader/AppHeader.jsx";
 import Footer from "../../Footer.jsx";
 import Finder from "../../Finder/Finder.jsx";
 import Ecoactions from "../../Ecoaction/Ecoaction.tsx";

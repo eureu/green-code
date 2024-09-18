@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Plants.module.css";
 import PhotoCreature from "../Main/PhotoCreature/PhotoCreature.tsx";
-import AppHeader from "../../AppHeader.jsx";
+import AppHeader from "../../AppHeader/AppHeader.jsx";
 import Footer from "../../Footer.jsx";
 import Finder from "../../Finder/Finder.jsx";
 import "../../Finder/Finder.css";

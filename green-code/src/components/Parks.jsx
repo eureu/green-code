@@ -1,4 +1,4 @@
-import AppHeader from "./AppHeader";
+import AppHeader from "./AppHeader/AppHeader.jsx";
 import Footer from "./Footer";
 import Finder from "./Finder/Finder";
 import "./Finder/Finder.css";

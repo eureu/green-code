@@ -2,9 +2,11 @@
   display: flex;
   flex-direction: row;
   gap: 127px;
-  width: 1124px;
+  /* width: 1124px; */
+  width: 100%;
   margin: 0 auto;
   margin-top: 26px;
+  padding: 1rem;
 }
 
 .photoCreatures {
@@ -16,6 +18,10 @@
 
 .greeting {
   margin-top: 24px;
+}
+
+.map {
+  width: 100%;
 }
 
 @media (max-width: 1200px) {
@@ -31,6 +37,20 @@
 
 @media (max-width: 480px) {
   /* в хедере полетел марджин от лого */
+
+  .mainPage {
+    margin-top: 0;
+  }
+
+  .newAndEcoActions {
+    display: none;
+  }
+  .photoCreatures {
+    display: none;
+  }
+  .greeting {
+    display: none;
+  }
 }
 
 /* @media (min-width: 320px) {
