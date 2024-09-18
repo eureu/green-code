@@ -5,13 +5,13 @@ import style from './mapMarker.module.css';
 import { Button } from "antd";
 
 export type ParkData = {
-  id: string;
+  id: number;
   name: string;
   image: string;
   id_description: number;
   description_park: string;
   description: string;
-  list_creatures: {img: string, tilte: string, describe: string}[];
+  list_creatures: {img: string, title: string, describe: string}[];
   coordinates: number[];
 };
 

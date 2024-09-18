@@ -1,3 +1,8 @@
+.map {
+    width: 739px;
+    height: 625px;
+}
+
 .selectedMarker {
     background-color: white;
     width: 217px;

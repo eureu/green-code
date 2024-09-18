@@ -11,6 +11,7 @@ import {
 import {API_KEY} from '../../config'
 import React, { useState } from 'react'
 import MapMarker, { ParkData } from './Marker';
+import style from './mapMarker.module.css'
 
 
 const INITIAL_ZOOM = 16;
@@ -32,7 +33,7 @@ const LOCATION: LocationType = {
   bounds: bbox,
 };
 
-const Map = ({parks}: {parks: ParkData[]}) => {
+const Map = ({parks, width, height}: {parks: ParkData[], width: string, height :string}) => {
   const [selectedPark, setSelectedPark] = useState<number>(-1)
   const handleClick = (e: Event, id:number) => {setSelectedPark(id); console.log(`${e.target}: Marker Click`)}
   const MapClick = (e:Event) => {
@@ -45,11 +46,12 @@ const Map = ({parks}: {parks: ParkData[]}) => {
  
   return (
     <>
+    <div style={{width: '759px', height: '625px'}}>
       <YMapComponentsProvider
       apiKey={API_KEY}
       lang="en_EN"
     >
-      <YMap
+      <YMap className={style.map}
         key="map"
         location={LOCATION}
         // theme="dark"
@@ -65,6 +67,7 @@ const Map = ({parks}: {parks: ParkData[]}) => {
         {/* <YMapDefaultMarker coordinates={[37.68, 55.76]}></YMapDefaultMarker> */}
       </YMap>
     </YMapComponentsProvider>
+    </div>
     </>
   );
 };

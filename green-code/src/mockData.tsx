@@ -1,4 +1,6 @@
-export const MockParks = [
+import { ParkData } from "./components/Map/Marker";
+
+export const MockParks: ParkData[] = [
     {id: 1,
         name: 'Зарядье',
         image: '123',
@@ -7,5 +9,5 @@ export const MockParks = [
     description: 'Описание',
     list_creatures: [{title: 'Белка', img: '../public/mockData/image.png', describe: 'Описание'}, {title: 'Трясогуска', img: '../public/mockData/image.png', describe: 'Описание'}], 
     coordinates: [37.68, 55.76]
-    }
+    },
 ]
