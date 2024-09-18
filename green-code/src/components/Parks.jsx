@@ -17,8 +17,10 @@ export default function Parks() {
           style={{ width: "10%" }}
         />
         <Button style={{ padding: "1rem" }}>найти парк</Button>
-        <div style={{ backgroundImage: "url('zaryadye.png')" }}>
-          <span>Москворецкий парк</span>
+        <div>
+          <img src="zaryadye.png" alt="Зарядье" style={{ width: "30%" }} />
+
+          {/* <span>Москворецкий парк</span> */}
         </div>
       </div>
       <Footer />
