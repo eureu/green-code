@@ -1,5 +1,5 @@
 import { Button, Input } from "antd";
-
+import "./Finder.css";
 export default function Finder() {
   const mainContentFindParkButton = {
     // height: "53px",
@@ -26,14 +26,13 @@ export default function Finder() {
         allowClear
         variant="filled"
         placeholder="Зарядье"
-        style={
-          {
-            // width: "60%"
-            // paddingRight: "3rem"
-          }
-        }
+        style={{
+          fontStyle: "italic"
+          // width: "60%"
+          // paddingRight: "3rem"
+        }}
       />
-      <Button style={mainContentFindParkButton}>найти парк</Button>
+      <Button style={mainContentFindParkButton}>Найти парк</Button>
     </div>
   );
 }

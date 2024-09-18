@@ -1,6 +1,6 @@
 import AppHeader from "./AppHeader";
 import Footer from "./Footer";
-import Finder from "./Finder";
+import Finder from "./Finder/Finder";
 
 export default function Parks() {
   return (

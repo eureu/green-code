@@ -45,7 +45,9 @@ export default function Footer() {
           style={{
             justifyContent: "space-evenly",
             alignItems: "center",
-            width: "100%"
+            width: "100%",
+            paddingTop: "14.5px",
+            paddingBottom: "14.5px"
           }}
         >
           <Link style={fontStyle}>Контакты</Link>
