@@ -1,3 +1,25 @@
+/* Стили для курсивного текста в placeholder */
 input::placeholder {
   font-style: italic; /* Применяет курсив к тексту в placeholder */
+}
+
+/* Для кроссбраузерной поддержки */
+input::-webkit-input-placeholder {
+  /* Для Chrome и Safari */
+  font-style: italic;
+}
+
+input::-moz-placeholder {
+  /* Для Firefox */
+  font-style: italic;
+}
+
+input:-ms-input-placeholder {
+  /* Для Internet Explorer 10-11 */
+  font-style: italic;
+}
+
+input:-moz-placeholder {
+  /* Для старых версий Firefox */
+  font-style: italic;
 }

@@ -27,9 +27,7 @@ export default function Finder() {
         variant="filled"
         placeholder="Зарядье"
         style={{
-          fontStyle: "italic"
-          // width: "60%"
-          // paddingRight: "3rem"
+          border: "none"
         }}
       />
       <Button style={mainContentFindParkButton}>Найти парк</Button>
