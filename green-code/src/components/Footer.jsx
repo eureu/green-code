@@ -10,6 +10,7 @@ export default function Footer() {
         width: "100%",
         position: "fixed",
         bottom: "0"
+        // display: "flex"
       }}
     >
       <div style={{ display: "flex" }}>
