@@ -15,10 +15,11 @@ export default function Finder() {
     <div
       className="finder"
       style={{
-        paddingBottom: "3rem",
+        paddingBottom: "1rem",
         width: "70%",
         display: "flex",
-        height: "5rem"
+        height: "5rem",
+        alignItems: "center"
       }}
     >
       <Input
