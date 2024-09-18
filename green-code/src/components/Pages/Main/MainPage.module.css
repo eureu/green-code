@@ -18,17 +18,20 @@
   margin-top: 24px;
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
+  /* поехал хедер где то с маргином траблы */
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
+} */
+
+/* @media (min-width: 768px) {
+  в хедере полетели кнопки
+} */
+
+@media (max-width: 480px) {
+  /* в хедере полетел марджин от лого */
 }
 
-@media (min-width: 768px) {
-}
-
-@media (min-width: 480px) {
-}
-
-@media (min-width: 320px) {
-}
+/* @media (min-width: 320px) {
+} */

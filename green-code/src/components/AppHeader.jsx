@@ -45,8 +45,7 @@ export default function AppHeader() {
           style={{
             justifyContent: "space-evenly",
             alignItems: "center",
-            width: "100%",
-            display: "none"
+            width: "100%"
           }}
         >
           <Link to="/animals" style={fontStyle}>
