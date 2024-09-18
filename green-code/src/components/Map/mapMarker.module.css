@@ -1,0 +1,47 @@
+.map {
+    width: 739px;
+    height: 625px;
+}
+
+.selectedMarker {
+    background-color: white;
+    width: 217px;
+    height: 204px;
+    padding: 13px 12px;
+    border-radius: 8px;
+    margin-top: -28px;
+}
+
+h3{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Inter';
+}
+
+.innerSelectedMarker {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.selected_item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.selected_item img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.list_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}

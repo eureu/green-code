@@ -1,0 +1,30 @@
+.news {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-bottom: 34px;
+
+}
+
+.new {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.date {
+    font-style: italic;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+    font-size: 16px;
+}
