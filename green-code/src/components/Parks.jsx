@@ -12,9 +12,10 @@ export default function Parks() {
           краснокнижных видов, которые там можно найти
         </section>
         <Input
+          allowClear
           variant="filled"
           placeholder="Зарядье"
-          style={{ width: "10%" }}
+          style={{ width: "30%" }}
         />
         <Button style={{ padding: "1rem" }}>найти парк</Button>
         <div>

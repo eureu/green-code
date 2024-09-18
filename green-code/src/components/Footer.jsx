@@ -1,3 +1,6 @@
+import { Flex } from "antd";
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer
@@ -9,8 +12,18 @@ export default function Footer() {
         bottom: "0"
       }}
     >
-      <div>
-        <span>sign in</span>
+      <div style={{ display: "flex" }}>
+        <Flex
+          style={{
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            width: "100%",
+            position: "absolute"
+          }}
+        >
+          <Link>Contacts</Link>
+          <Link>sing in as an employe</Link>
+        </Flex>
       </div>
     </footer>
   );
