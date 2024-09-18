@@ -7,9 +7,13 @@ import { MockParks } from '../../../mockData';
 import style from './MainPage.module.css'
 import Banner from './Banner/Banner';
 import PhotoCreature from './PhotoCreature/PhotoCreature';
+import AppHeader from '../../AppHeader';
+import Footer from '../../Footer';
 
 const MainPage = () => {
     return(
+        <>
+        <AppHeader/>
     <div className={style.mainPage}>
         <div>
             <Banner/>
@@ -18,9 +22,9 @@ const MainPage = () => {
                 <p>ККМ — это проект, который направлен на популяризацию и актуализацию информации о краснокнижных животных и растениях.</p>
                 <p>На сайте вы можете ознакомиться с электронной версией Красной книги Москвы. А если встретите кого-то оттуда вживую, то присылайте фотографию в нашу форму: это очень ценная информация для учёных.</p>
                 <div className={style.photoCreatures}>
-                <PhotoCreature url={'./public/icons/MainCreatures/Mammals.jpg'} width={'220px'} height={'220px'} text={'Животные'}/>
-                <PhotoCreature url={'../../../../public/icons/MainCreatures/Mammals.jpg'} width={'220px'} height={'220px'} text={'Животные'}/>
-                <PhotoCreature url={'../../../../public/icons/MainCreatures/Mammals.jpg'} width={'220px'} height={'220px'} text={'Животные'}/>
+                <PhotoCreature url={"url('../../../../../public/icons/MainCreatures/Mammals.jpg')"} width={'220px'} height={'220px'} text={'Животные'}/>
+                <PhotoCreature url={"url('../../../../../public/icons/MainCreatures/Plants.jpg')"} width={'220px'} height={'220px'} text={'Растения'}/>
+                <PhotoCreature url={"url('../../../../../public/icons/MainCreatures/Mushrooms.jpg')"} width={'220px'} height={'220px'} text={'Грибы'}/>
 
                                     
                 </div>
@@ -35,7 +39,9 @@ const MainPage = () => {
             <News/>
             <Ecoactions/>
         </div>
-    </div>)
+    </div>
+    <Footer/>
+</>)
 }
 
 export default MainPage;

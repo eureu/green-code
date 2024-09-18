@@ -1,6 +1,6 @@
 import { Button, Input } from "antd";
 
-export default function Finder() {
+export default function Finder({text, placeholder}) {
   const mainContentFindParkButton = {
     // height: "53px",
     // width: "201px",
@@ -8,7 +8,7 @@ export default function Finder() {
     backgroundColor: "#6FB0A5",
     padding: "12px 32px 12px 32px",
     // width: "10%",
-    marginLeft: "3rem",
+    marginLeft: "32px",
     color: "#f8f8f8"
   };
   return (
@@ -25,7 +25,7 @@ export default function Finder() {
       <Input
         allowClear
         variant="filled"
-        placeholder="Зарядье"
+        placeholder={placeholder}
         style={
           {
             // width: "60%"
@@ -33,7 +33,7 @@ export default function Finder() {
           }
         }
       />
-      <Button style={mainContentFindParkButton}>найти парк</Button>
+      <Button style={mainContentFindParkButton}>{text}</Button>
     </div>
   );
 }

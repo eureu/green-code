@@ -46,7 +46,7 @@ const Map = ({parks, width, height}: {parks: ParkData[], width: string, height :
  
   return (
     <>
-    <div style={{width: '759px', height: '625px'}}>
+    <div style={{width: '759px', height: '625px', marginBottom: '96px'}}>
       <YMapComponentsProvider
       apiKey={API_KEY}
       lang="en_EN"

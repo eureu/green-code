@@ -1,0 +1,36 @@
+.creature_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 40px;
+    margin-bottom: 52px;
+}
+
+.creature_grid_ {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 40px;
+    margin-bottom: 96px;
+}
+
+.mainPage {
+    display: flex;
+    flex-direction: row;
+    gap: 127px;
+    width: 1124px;
+    margin: 0 auto;
+    margin-top: 26px;
+
+}
+
+.header {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 52px;
+}
+
+.describe {
+    margin-bottom: 52px;
+    margin-top: 16px;
+}

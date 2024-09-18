@@ -23,7 +23,7 @@
     color: white;
     z-index: 220;
 }
-s
+
 h3 {
     font-size: 24px;
     font-weight: 700;
@@ -44,4 +44,16 @@ p {
     margin-left: -16px;
     margin-bottom: -16px;
     border-radius: 8px;
+}
+
+.rightBottom_text {
+    position: absolute;
+    bottom: 13px;
+    right: 28px;
+}
+
+.title {
+    position: absolute;
+    bottom: 13px;
+    left: 16px;
 }

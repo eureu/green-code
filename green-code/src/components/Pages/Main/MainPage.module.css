@@ -4,6 +4,7 @@
     gap: 127px;
     width: 1124px;
     margin: 0 auto;
+    margin-top: 26px;
 
 }
 
@@ -12,4 +13,8 @@
     flex-direction: row;
     gap: 40px;
     align-items: center;
+}
+
+.greeting {
+    margin-top: 24px;
 }
