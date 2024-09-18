@@ -3,10 +3,14 @@ import {
   YMap,
   YMapComponentsProvider,
   YMapDefaultFeaturesLayer,
+  YMapDefaultMarker,
   YMapDefaultSchemeLayer,
+  YMapListener,
+  YMapMarker,
 } from 'ymap3-components';
 import {API_KEY} from '../../config'
-import React from 'react'
+import React, { useState } from 'react'
+import MapMarker, { ParkData } from './Marker';
 
 
 const INITIAL_ZOOM = 16;
@@ -28,9 +32,17 @@ const LOCATION: LocationType = {
   bounds: bbox,
 };
 
-const Map = () => {
- 
+const Map = ({parks}: {parks: ParkData[]}) => {
+  const [selectedPark, setSelectedPark] = useState<number>(-1)
+  const handleClick = (e: Event, id:number) => {setSelectedPark(id); console.log(`${e.target}: Marker Click`)}
+  const MapClick = (e:Event) => {
+    console.log(e)
+    if(e?.type !== 'marker'){
+      setSelectedPark(-1); 
+    console.log('Map click')}
+  }
 
+ 
   return (
     <>
       <YMapComponentsProvider
@@ -40,11 +52,17 @@ const Map = () => {
       <YMap
         key="map"
         location={LOCATION}
-        mode="vector"
-        theme="dark"
+        // theme="dark"
       >
         <YMapDefaultSchemeLayer />
         <YMapDefaultFeaturesLayer />
+        <YMapListener 
+        onClick={(e:Event) => MapClick(e)}
+        ></YMapListener>
+
+        {parks.map(item => <MapMarker {...item} selectedPark={selectedPark} handleClick={handleClick}></MapMarker>)}
+        <YMapMarker coordinates={[37.68, 55.76]}></YMapMarker>
+        {/* <YMapDefaultMarker coordinates={[37.68, 55.76]}></YMapDefaultMarker> */}
       </YMap>
     </YMapComponentsProvider>
     </>
