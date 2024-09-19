@@ -20,6 +20,7 @@ const AdminPage = () => {
               вида/парка/кадастрового участка
             </p>
             <Filters />
+            <iframe src="https://geoplys.ru/kadastrovaja-karta-moskvy/"/>
             <Map parks={[]} width={"739px"} height={"425px"} />
             <button>Скачать CSV</button>
           </div>

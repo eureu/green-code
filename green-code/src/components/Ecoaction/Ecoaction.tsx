@@ -8,8 +8,8 @@ const Ecoactions = () => {
     <div className={style.ecoactions}>
         <h2>Экодвижения</h2>
         <div className={style.ecoaction}>
-            <img className={style.ecoaction_img} src=".../../../public/icons/ecoactions/Mosnature.svg"/>
-            <span className={style.title}>ГПБУ «Мосприрода»</span>
+            <img className={style.ecoaction_img} src=".../../../public/icons/ecoactions/MoscowBuild.jpg" style={{borderBlockStyle: 'solid', borderWidth: '1px', borderColor: "grey"}}/>
+            <span className={style.title}>Департамент природопользования и охраны окружающей среды города Москвы</span>
         </div>
         <div className={style.ecoaction}>
             <img className={style.ecoaction_img} src=".../../../public/icons/ecoactions/ActionECA.svg"/>

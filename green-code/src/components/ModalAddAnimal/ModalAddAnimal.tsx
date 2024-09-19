@@ -60,6 +60,8 @@ const ModalContent = ({setModalOpen}) => {
     const [previewImage, setPreviewImage] = useState('');
     const [formControl, setFormControl] = useState<formType|any>(initialForm);
     const [fileList, setFileList] = useState<UploadFile[][]>([[], [], []]);
+    const [acceptOwnPart, setAcceptOwnPart] = useState(false);
+    const [acceptPart, setAcceptPart] = useState(false);
 
 
     useEffect(() => {console.log(formControl, fileList)}, [formControl, fileList])
@@ -163,7 +165,7 @@ const ModalContent = ({setModalOpen}) => {
 
       const validateForm = (): boolean => {
         const { type, date, author, comment, image } = formControl;
-        if ( !type || !date || !author || !comment || !image) {
+        if ( !type || !date || !author || !comment || !image || !acceptOwnPart || !acceptPart) {
           return false;
         }
         return true;
@@ -192,6 +194,7 @@ const ModalContent = ({setModalOpen}) => {
                   fileList={fileList[index]}
                   onPreview={handlePreview}
                   onChange={handleChange(index)}
+                  style={{width: '300px', height: '300px'}}
                 >
                   {fileList[index].length >= 1 ? null : uploadButton}
                 </Upload>
@@ -229,6 +232,20 @@ const ModalContent = ({setModalOpen}) => {
           <div className={style.field}>
             <h2>Комментарий</h2>
             <input name="comment" placeholder={'Например, количество особей'} value={formControl.comment} onChange={handleInputChange} />
+          </div>
+          <div>
+            <div>
+                <input className={style.accept} type="checkbox" id="accept_own_part" name="interest" value="false" checked={acceptOwnPart}
+                onChange={(e) => setAcceptOwnPart(e.target.checked)}
+                />
+                <label forHTML="accept_own_part">Я согласен на обработку персональных данных и с условяими пользовательского соглашения</label>
+              </div>
+              <div>
+                <input className={style.accept} type="checkbox" id="accept_part" name="interest" value="false" checked={acceptPart}
+                          onChange={(e) => setAcceptPart(e.target.checked)}
+/>
+                <label forHTML="accept_part">Я согласен</label>
+            </div>
           </div>
             <Button type="primary" htmlType="submit" style={{backgroundColor: '#6FB0A5'}}>
             Отправить наблюдение

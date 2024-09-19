@@ -33,7 +33,7 @@ const LOCATION: LocationType = {
   bounds: bbox,
 };
 
-const Map = ({parks, width, height}: {parks: ParkData[], width: string, height :string}) => {
+const Map = ({parks, width, height}: {parks: any[], width: string, height :string}) => {
   const [selectedPark, setSelectedPark] = useState<number>(-1)
   const handleClick = (e: Event, id:number) => {setSelectedPark(id); console.log(`${e.target}: Marker Click`)}
   const MapClick = (e:Event) => {
@@ -47,7 +47,7 @@ const Map = ({parks, width, height}: {parks: ParkData[], width: string, height :
   return (
     <>
     <div style={{width, height}}>
-    <YMapComponentsProvider apiKey={API_KEY} lang="en_EN">
+    {/* <YMapComponentsProvider apiKey={API_KEY} lang="en_EN">
           <YMap
             className={style.map}
             key="map"
@@ -58,17 +58,28 @@ const Map = ({parks, width, height}: {parks: ParkData[], width: string, height :
             <YMapDefaultFeaturesLayer />
             <YMapListener onClick={(e: Event) => MapClick(e)}></YMapListener>
 
-            {/* {parks.map((item) => (
+            {parks.map((item) => (
               <MapMarker
                 {...item}
                 selectedPark={selectedPark}
                 handleClick={handleClick}
               ></MapMarker>
-            ))} */}
+            ))}
             <YMapDefaultMarker coordinates={[37.68, 55.76]}></YMapDefaultMarker>
-            {/* <YMapDefaultMarker coordinates={[37.68, 55.76]}></YMapDefaultMarker> */}
+            {/* <YMapDefaultMarker coordinates={[37.68, 55.76]}></YMapDefaultMarker> 
           </YMap>
-        </YMapComponentsProvider>
+        </YMapComponentsProvider> */}
+       
+       <YMapComponentsProvider apiKey={API_KEY}>
+        <YMap location={LOCATION}>
+          <YMapDefaultSchemeLayer />
+          <YMapDefaultFeaturesLayer />
+          <YMapDefaultMarker
+            coordinates={[37.68, 55.76]}
+          />
+        </YMap>
+      </YMapComponentsProvider>
+
     </div>
     </>
   );

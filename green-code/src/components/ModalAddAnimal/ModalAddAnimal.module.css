@@ -26,6 +26,12 @@ input:focus, input:hover, input:focus-visible {
     border: none;
 }
 
+.accept {
+    width: auto;
+    height: auto;
+    margin-right: 5px;
+}
+
 
 .modal {
     position: absolute;

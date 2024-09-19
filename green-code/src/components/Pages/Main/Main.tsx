@@ -50,7 +50,11 @@ const MainPage = () => {
                 <h2>Узнайте, кого можно встретить в парках</h2>
                 <p>Выберите парк, в котором собираетесь прогуляться и посмотрите список краснокнижных видов, которые там можно найти.</p>
             </div>
-            <Map parks={data?.data.map(item => ({id: item[0], cords: item[5] }) )} width={'739px'} height={'625px'}/>
+            <Map 
+            parks=
+            {MockParks}
+            // {data?.data.map(item => ({id: item[0], cords: item[5] }) )}
+             width={'739px'} height={'625px'}/>
         </div>
         <div>
             <News/>

@@ -59,7 +59,7 @@ const Meshroom = () => {
         <div>
           <span>
             <span className={style.header}>Грибы</span>
-            <Finder text={"Найти вид"} placeholder={"Суслик"} />
+            <Finder text={"Найти вид"} placeholder={"Дождевик"} />
           </span>
           <div className={style.creature_grid_}>
           {(data.data).map(item => (

@@ -52,7 +52,7 @@ const Plants = () => {
         <div>
           <span>
             <span className={style.header}>Растения</span>
-            <Finder text={"Найти вид"} placeholder={"Суслик"} />
+            <Finder text={"Найти вид"} placeholder={"Ель"} />
           </span>
           <div className={style.creature_grid_}>
           {(data.data).map(item => (
