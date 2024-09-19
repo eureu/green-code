@@ -1,5 +1,6 @@
 from fastapi import APIRouter, UploadFile, File, Form, Request, Response
 from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse
 import asyncio
 import app.internal.database.db_sqlite3 as db
 from pydantic import BaseModel
@@ -66,6 +67,11 @@ async def get_plants():
 @router.get("/get_mushroom")
 async def get_mushroom():
     return {"data": await db.get_mushroom(bd_name)}
+
+
+@router.get("/{filename}")
+async def get_mushroom(filename: str):
+    return FileResponse(f"image/{filename}")
 
 
 @router.get("/get_photo")
