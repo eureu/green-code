@@ -8,7 +8,7 @@ warnings.simplefilter("always")
 
 
 def create_tables(DB_PATH):
-    try:
+    # try:
         connection = sqlite3.connect(DB_PATH)
         cursor = connection.cursor()
 
@@ -36,14 +36,29 @@ def create_tables(DB_PATH):
         )
         """)
 
+        cursor.execute("""
+                CREATE TABLE IF NOT EXISTS give_photo (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    image1 TEXT,
+                    image2 TEXT,
+                    image3 TEXT,
+                    type TEXT,
+                    date TEXT,
+                    cord TEXT,
+                    author TEXT,
+                    comment TEXT
+                )
+                """)
+
         connection.commit()
         connection.close()
-    except Exception as ex:
-        print(f"[ERROR] Dont create db: {ex}")
+
+    #     print("ok")
+    # except Exception as ex:
+    #     print(f"[ERROR] Dont create db: {ex}")
 
 
-
-def add_park(DB_PATH, name, description, metro, address, cord, image):
+async def add_park(DB_PATH, name, description, metro, address, cord, image):
     connection = None
 
     try:
@@ -55,7 +70,7 @@ def add_park(DB_PATH, name, description, metro, address, cord, image):
         connection.commit()
         connection.close()
     except sqlite3.OperationalError as e:
-        create_tables(DB_PATH)
+        await create_tables(DB_PATH)
     except Exception as _ex:
         warnings.warn(f"Error: {_ex}")
         return "error"
@@ -67,7 +82,7 @@ def add_park(DB_PATH, name, description, metro, address, cord, image):
         return "ok"
 
 
-def add_type_red_book(DB_PATH, name, type, squad, family, description, live_in_park, image):
+async def add_type_red_book(DB_PATH, name, type, squad, family, description, live_in_park, image):
     connection = None
 
     try:
@@ -80,7 +95,7 @@ def add_type_red_book(DB_PATH, name, type, squad, family, description, live_in_p
         connection.close()
 
     except sqlite3.OperationalError as e:
-        create_tables(DB_PATH)
+        await create_tables(DB_PATH)
 
     except Exception as _ex:
         warnings.warn(f"Error: {_ex}")
@@ -93,7 +108,7 @@ def add_type_red_book(DB_PATH, name, type, squad, family, description, live_in_p
         return "ok"
 
 
-def get_park(DB_PATH):
+async def get_park(DB_PATH):
     connection = None
     result = None
 
@@ -103,12 +118,11 @@ def get_park(DB_PATH):
         cursor.execute("SELECT * FROM parks")
         result = cursor.fetchall()
 
-
         if result is None:
             return "Park not found"
 
     except sqlite3.OperationalError as e:
-        create_tables(DB_PATH)
+        await create_tables(DB_PATH)
     except Exception as _ex:
         warnings.warn(f"Error: {_ex}")
         return "error"
@@ -119,7 +133,7 @@ def get_park(DB_PATH):
     return result
 
 
-def get_creatures(DB_PATH, type_id):
+async def get_creatures(DB_PATH, type_id):
     connection = None
     result = None
 
@@ -132,7 +146,7 @@ def get_creatures(DB_PATH, type_id):
             return "Type not found"
 
     except sqlite3.OperationalError as e:
-        create_tables(DB_PATH)
+        await create_tables(DB_PATH)
     except Exception as _ex:
         warnings.warn(f"Error: {_ex}")
         return "error"
@@ -143,5 +157,153 @@ def get_creatures(DB_PATH, type_id):
     return result
 
 
+async def get_plants(DB_PATH):
+    connection = None
+    result = None
+
+    try:
+        connection = sqlite3.connect(DB_PATH)
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM types_red_book WHERE type = 'plant'")
+        result = cursor.fetchall()
+
+        if result is None:
+            return "Park not found"
+
+    except sqlite3.OperationalError as e:
+        await create_tables(DB_PATH)
+    except Exception as _ex:
+        warnings.warn(f"Error: {_ex}")
+        return "error"
+    finally:
+        if connection:
+            connection.close()
+
+    return result
+
+
+async def get_animals(DB_PATH):
+    connection = None
+    result = None
+
+    try:
+        connection = sqlite3.connect(DB_PATH)
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM types_red_book WHERE type = 'animal'")
+        result = cursor.fetchall()
+
+        if result is None:
+            return "Park not found"
+
+    except sqlite3.OperationalError as e:
+        await create_tables(DB_PATH)
+    except Exception as _ex:
+        warnings.warn(f"Error: {_ex}")
+        return "error"
+    finally:
+        if connection:
+            connection.close()
+
+    return result
+
+
+async def get_mushroom(DB_PATH):
+    connection = None
+    result = None
+
+    try:
+        connection = sqlite3.connect(DB_PATH)
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM types_red_book WHERE type = 'mushroom'")
+        result = cursor.fetchall()
+
+        if result is None:
+            return "Park not found"
+
+    except sqlite3.OperationalError as e:
+        await create_tables(DB_PATH)
+    except Exception as _ex:
+        warnings.warn(f"Error: {_ex}")
+        return "error"
+    finally:
+        if connection:
+            connection.close()
+
+    return result
+
+
+async def add_new_photo(DB_PATH, image1, image2, image3, type, date, cord, author, comment):
+    connection = None
+
+    try:
+        connection = sqlite3.connect(DB_PATH)
+        cursor = connection.cursor()
+        cursor.execute("""
+        INSERT INTO give_photo (image1, image2, image3, type, date, date, cord, author, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (image1, image2, image3, type, date, date, cord, author, comment))
+        connection.commit()
+        connection.close()
+
+    except sqlite3.OperationalError as e:
+        await create_tables(DB_PATH)
+
+    except Exception as _ex:
+        warnings.warn(f"Error: {_ex}")
+        return "error"
+
+    finally:
+        if connection:
+            connection.close()
+
+        return "ok"
+
+
+async def get_photo(DB_PATH):
+    connection = None
+
+    try:
+        connection = sqlite3.connect(DB_PATH)
+        cursor = connection.cursor()
+        cursor.execute("""SELECT * FROM give_photo""")
+        connection.commit()
+        connection.close()
+
+    except sqlite3.OperationalError as e:
+        await create_tables(DB_PATH)
+
+    except Exception as _ex:
+        warnings.warn(f"Error: {_ex}")
+        return "error"
+
+    finally:
+        if connection:
+            connection.close()
+
+        return "ok"
+
+
 if __name__ == '__main__':
-    create_tables("database/database.db")
+    ...
+    # get_animals("")
+
+    # conn = sqlite3.connect('../../../database/database.db')
+    # cursor = conn.cursor()
+    #
+    # # ID элемента, который нужно удалить
+    # id_to_delete = 6
+    #
+    # # SQL-запрос для удаления элемента
+    # sql = "DELETE FROM types_red_book WHERE id = ?"
+    #
+    # # Выполнение запроса с ID элемента
+    # cursor.execute(sql, (id_to_delete,))
+    #
+    # # Сохранение изменений в базе данных
+    # conn.commit()
+    #
+    # # Закрытие соединения с базой данных
+    # conn.close()
+    #
+    # print(f"Элемент с ID {id_to_delete} удален.")
+
+    # create_tables("../../../database/database.db")
