@@ -8,7 +8,7 @@ const Ecoactions = () => {
     <div className={style.ecoactions}>
         <h2>Экодвижения</h2>
         <div className={style.ecoaction}>
-            <img className={style.ecoaction_img} src=".../../../public/icons/ecoactions/ActionECA.svg"/>
+            <img className={style.ecoaction_img} src=".../../../public/icons/ecoactions/Mosnature.svg"/>
             <span className={style.title}>ГПБУ «Мосприрода»</span>
         </div>
         <div className={style.ecoaction}>
@@ -16,7 +16,7 @@ const Ecoactions = () => {
             <span className={style.title}>Движение ЭКА</span>
         </div>
         <div className={style.ecoaction}>
-            <img className={style.ecoaction_img} src=".../../../public/icons/ecoactions/ActionECA.svg"/>
+            <img className={style.ecoaction_img} src=".../../../public/icons/ecoactions/Ecocenter.svg"/>
             <span className={style.title}>Экоцентр «Заповедники»</span>
         </div>
         {/* <Button

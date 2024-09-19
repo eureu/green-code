@@ -1,17 +1,17 @@
 .mainPage {
-  /* PADDING НЕ ПРОПИСЫВАТЬ */
-
   display: flex;
   flex-direction: row;
   gap: 127px;
-  /* width: 1124px; */
-  width: 100%;
+  width: 1124px;
   margin: 0 auto;
-  margin-top: 1.5rem;
-  padding-left: 9.75rem;
-  flex: 1;
-  z-index: 10;
-  /* padding: 1rem; */
+  margin-top: 26px;
+  margin-bottom: 96px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .photoCreatures {
@@ -23,50 +23,14 @@
   z-index: -1;
 }
 
-.greeting {
-  margin-top: 2.5rem;
+.greeting,
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.map {
-  width: 100%;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+/* Mobile Version */
+
+@media (min-width: 350px) {
 }
-
-@media (max-width: 1200px) {
-  /* поехал хедер где то с маргином траблы */
-}
-
-/* @media (min-width: 992px) {
-} */
-
-/* @media (min-width: 768px) {
-  в хедере полетели кнопки
-} */
-
-@media (max-width: 480px) {
-  /* в хедере полетел марджин от лого */
-
-  .mainPage {
-    margin-top: 0;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    height: 100vh;
-  }
-
-  .newAndEcoActions {
-    display: none;
-  }
-  .photoCreatures {
-    display: none;
-  }
-  .greeting {
-    display: none;
-  }
-  .mainPageFinder {
-    display: none;
-  }
-}
-
-/* @media (min-width: 320px) {
-} */

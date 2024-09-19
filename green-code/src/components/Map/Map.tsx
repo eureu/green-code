@@ -56,7 +56,7 @@ const Map = ({
 
   return (
     <>
-      <div style={{ width: "100%", height: "425px" }}>
+      <div style={{ width, height }}>
         <YMapComponentsProvider apiKey={API_KEY} lang="en_EN">
           <YMap
             className={style.map}
@@ -68,14 +68,14 @@ const Map = ({
             <YMapDefaultFeaturesLayer />
             <YMapListener onClick={(e: Event) => MapClick(e)}></YMapListener>
 
-            {parks.map((item) => (
+            {/* {parks.map((item) => (
               <MapMarker
                 {...item}
                 selectedPark={selectedPark}
                 handleClick={handleClick}
               ></MapMarker>
-            ))}
-            <YMapMarker coordinates={[37.68, 55.76]}></YMapMarker>
+            ))} */}
+            <YMapDefaultMarker coordinates={[37.68, 55.76]}></YMapDefaultMarker>
             {/* <YMapDefaultMarker coordinates={[37.68, 55.76]}></YMapDefaultMarker> */}
           </YMap>
         </YMapComponentsProvider>

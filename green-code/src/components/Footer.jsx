@@ -1,7 +1,11 @@
 import { Flex } from "antd";
 import { Link } from "react-router-dom";
 
-const fontStyle = { fontSize: "16px", color: "#FAF2F2" };
+const fontStyle = {
+  fontSize: "16px",
+  color: "#FAF2F2",
+  textDecoration: "none"
+};
 
 export default function Footer() {
   return (
@@ -11,7 +15,8 @@ export default function Footer() {
         backgroundColor: "#6FB0A5",
         width: "100%",
         position: "fixed",
-        bottom: "0"
+        bottom: "0",
+        zIndex: "100"
       }}
     >
       <div className="footer-content" style={{ width: "100%", height: "100%" }}>
@@ -20,9 +25,10 @@ export default function Footer() {
             justifyContent: "space-evenly",
             alignItems: "center",
             width: "100%",
-            height: "100%"
-            // paddingTop: "14.5px",
-            // paddingBottom: "14.5px"
+            width: "301px",
+            margin: "0 auto",
+            marginTop: "26px",
+            fontWeight: "400"
           }}
         >
           <Link style={fontStyle}>Контакты</Link>

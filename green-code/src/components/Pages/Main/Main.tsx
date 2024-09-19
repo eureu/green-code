@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // import style from './MainPage.module.css'
 import News from "../../News/News";
 import Ecoactions from "../../Ecoaction/Ecoaction";
@@ -7,28 +7,40 @@ import { MockParks } from "../../../mockData";
 import style from "./MainPage.module.css";
 import Banner from "./Banner/Banner";
 import PhotoCreature from "./PhotoCreature/PhotoCreature";
-import AppHeader from "../../AppHeader/AppHeader";
+import AppHeader from "../../AppHeader";
 import Footer from "../../Footer";
-import Finder from "../../Finder/Finder";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-const MainPage = ({ paddingLeft }) => {
+type DataType = { data: any[] };
+
+const MainPage = () => {
+  const [data, setData] = useState<DataType>({ data: [] });
+
+  useEffect(() => {
+    fetch("http://194.58.98.44:8000/api/v1/get_parks")
+      .then((res) => {
+        if (res.ok) return res.json();
+        else {
+          return new Error("ошибка в запросе");
+        }
+      })
+      .then((ans) => setData(ans))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
-      <AppHeader paddingLeft={paddingLeft} />
-      <div
-        className={style.mainPage}
-        style={{ paddingLeft: paddingLeft, marginTop: "5.5rem" }}
-      >
-        <div>
-          <Banner />
-
+      <AppHeader />
+      <div className={style.mainPage}>
+        <div className={style.container}>
+          <Banner rightBottom={""} title={""} />
           <div className={style.greeting}>
             <h1>Что такое Красная книга Москвы?</h1>
-            <p style={{ paddingTop: "1.5rem" }}>
+            <p>
               ККМ — это проект, который направлен на популяризацию и
               актуализацию информации о краснокнижных животных и растениях.
             </p>
-            <p style={{ paddingTop: "1.5rem" }}>
+            <p>
               На сайте вы можете ознакомиться с электронной версией Красной
               книги Москвы. А если встретите кого-то оттуда вживую, то
               присылайте фотографию в нашу форму: это очень ценная информация
@@ -42,6 +54,7 @@ const MainPage = ({ paddingLeft }) => {
                 width={"220px"}
                 height={"220px"}
                 text={"Животные"}
+                link={"/animals"}
               />
               <PhotoCreature
                 url={
@@ -50,6 +63,7 @@ const MainPage = ({ paddingLeft }) => {
                 width={"220px"}
                 height={"220px"}
                 text={"Растения"}
+                link={"/plants"}
               />
               <PhotoCreature
                 url={
@@ -58,24 +72,22 @@ const MainPage = ({ paddingLeft }) => {
                 width={"220px"}
                 height={"220px"}
                 text={"Грибы"}
+                link={"/mushrooms"}
               />
             </div>
           </div>
           <div className={style.search}>
-            <h2 style={{ paddingTop: "2.5rem" }}>
-              Узнайте, кого можно встретить в парках
-            </h2>
-            <p style={{ paddingTop: "1.5rem", paddingBottom: "1.5rem" }}>
+            <h2>Узнайте, кого можно встретить в парках</h2>
+            <p>
               Выберите парк, в котором собираетесь прогуляться и посмотрите
               список краснокнижных видов, которые там можно найти.
             </p>
-            <div className={style.mainPageFinder}>
-              <Finder text={"Find park"} placeholder={"Zaryadye"} />
-            </div>
           </div>
-          <div className={style.map}>
-            <Map parks={MockParks} width={"200px"} height={"425px"} />
-          </div>
+          <Map
+            parks={data?.data.map((item) => ({ id: item[0], cords: item[5] }))}
+            width={"739px"}
+            height={"625px"}
+          />
         </div>
         <div
           className={style.newAndEcoActions}
