@@ -9,21 +9,26 @@ import Banner from "./Banner/Banner";
 import PhotoCreature from "./PhotoCreature/PhotoCreature";
 import AppHeader from "../../AppHeader/AppHeader";
 import Footer from "../../Footer";
+import Finder from "../../Finder/Finder";
 
-const MainPage = () => {
+const MainPage = ({ paddingLeft }) => {
   return (
     <>
-      <AppHeader />
-      <div className={style.mainPage}>
+      <AppHeader paddingLeft={paddingLeft} />
+      <div
+        className={style.mainPage}
+        style={{ paddingLeft: paddingLeft, marginTop: "5.5rem" }}
+      >
         <div>
           <Banner />
+
           <div className={style.greeting}>
             <h1>Что такое Красная книга Москвы?</h1>
-            <p>
+            <p style={{ paddingTop: "1.5rem" }}>
               ККМ — это проект, который направлен на популяризацию и
               актуализацию информации о краснокнижных животных и растениях.
             </p>
-            <p>
+            <p style={{ paddingTop: "1.5rem" }}>
               На сайте вы можете ознакомиться с электронной версией Красной
               книги Москвы. А если встретите кого-то оттуда вживую, то
               присылайте фотографию в нашу форму: это очень ценная информация
@@ -57,17 +62,25 @@ const MainPage = () => {
             </div>
           </div>
           <div className={style.search}>
-            <h2>Узнайте, кого можно встретить в парках</h2>
-            <p>
+            <h2 style={{ paddingTop: "2.5rem" }}>
+              Узнайте, кого можно встретить в парках
+            </h2>
+            <p style={{ paddingTop: "1.5rem", paddingBottom: "1.5rem" }}>
               Выберите парк, в котором собираетесь прогуляться и посмотрите
               список краснокнижных видов, которые там можно найти.
             </p>
+            <div className={style.mainPageFinder}>
+              <Finder text={"Find park"} placeholder={"Zaryadye"} />
+            </div>
           </div>
           <div className={style.map}>
             <Map parks={MockParks} width={"200px"} height={"425px"} />
           </div>
         </div>
-        <div className={style.newAndEcoActions}>
+        <div
+          className={style.newAndEcoActions}
+          style={{ paddingRight: paddingLeft }}
+        >
           <News />
           <Ecoactions />
         </div>

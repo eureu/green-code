@@ -1,11 +1,11 @@
-import AppHeader from "./AppHeader/AppHeader.jsx";
-import Footer from "./Footer";
-import Finder from "./Finder/Finder";
-import "./Finder/Finder.css";
-import News from "./News/News.tsx";
-import "./News/News.module.css";
-import Ecoactions from "./Ecoaction/Ecoaction.tsx";
-
+import AppHeader from "../AppHeader/AppHeader.jsx";
+import Footer from "../Footer.jsx";
+import Finder from "../Finder/Finder.jsx";
+import "../Finder/Finder.css";
+import News from "../News/News.tsx";
+import "../News/News.module.css";
+import Ecoactions from "../Ecoaction/Ecoaction.tsx";
+import style from "./Parks.module.css";
 export default function Parks() {
   return (
     <>
@@ -59,8 +59,7 @@ export default function Parks() {
           className="news-and-ecoactions"
           style={{ padding: "1rem 3rem 0 3rem", width: "35%" }}
         >
-          <News />
-          <Ecoactions />
+          <div className={style.newAndEcoactions}></div>
         </div>
       </div>
       <Footer />

@@ -15,7 +15,7 @@ const mainContentFindParkButton = {
 const Banner = ({ rightBottom, title }) => {
   return (
     <div className={style.banner}>
-      <img src="Bg-banner.jpg" alt="" />
+      <img src="Bg-banner.jpg" alt="cover" />
       {/* <div className={style.inner_banner}>
       {rightBottom === "" && (
         <>
