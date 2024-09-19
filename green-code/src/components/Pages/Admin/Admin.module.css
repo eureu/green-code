@@ -1,0 +1,16 @@
+.body {
+    display: flex;
+    flex-direction: row;
+    gap: 125px;
+    margin: 0 auto;
+    margin-top: 26px;
+    max-width: 1122px;
+
+}
+
+.inner_flex {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 0 auto;
+}

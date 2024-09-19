@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "antd": "^5.20.6",
+    "dayjs": "^1.11.13",
     "react": "^18.3.1",
     "react-css-modules": "^4.7.11",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
+    "react-transition-group": "^4.4.5",
     "ymap3-components": "^1.1.6"
   },
   "devDependencies": {

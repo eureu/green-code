@@ -34,3 +34,8 @@
     margin-bottom: 52px;
     margin-top: 16px;
 }
+
+.notFound {
+    color: "grey";
+    font-weight: 500;
+}

@@ -4,16 +4,19 @@ import { YMapMarker } from "ymap3-components";
 import style from './mapMarker.module.css';
 import { Button } from "antd";
 
-export type ParkData = {
-  id: number;
-  name: string;
-  image: string;
-  id_description: number;
-  description_park: string;
-  description: string;
-  list_creatures: {img: string, title: string, describe: string}[];
-  coordinates: number[];
-};
+export type ParkData = any[]
+
+// {
+  // id: number;
+  // name: string;
+  // image: string;
+  // id_description: number;
+  // description_park: string;
+  // description: string;
+  // list_creatures: {img: string, title: string, describe: string}[];
+  // coordinates: number[];
+
+// };
 
 const mainContentFindParkButton = {
   height: "43px",
@@ -24,16 +27,16 @@ const mainContentFindParkButton = {
   color: 'white',
 };
 
+const list_creatures = [{title: 'Белка', img: '../public/mockData/image.png', describe: 'Описание'}, {title: 'Трясогуска', img: '../public/mockData/image.png', describe: 'Описание'}];
+
 const MapMarker = ({
   id,
   name,
   image,
-  id_description,
-  description_park,
   description,
-  list_creatures,
   coordinates,
   handleClick,
+  // list_creatures,
   selectedPark
 }) => {
     useEffect(()=> console.log(selectedPark), [selectedPark])

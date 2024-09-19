@@ -5,6 +5,14 @@
     width: 1124px;
     margin: 0 auto;
     margin-top: 26px;
+    margin-bottom: 96px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 
 }
 
@@ -15,6 +23,15 @@
     align-items: center;
 }
 
-.greeting {
-    margin-top: 24px;
+.greeting, .search {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Mobile Version */
+
+@media (min-width: 350px) {
+    
+
 }

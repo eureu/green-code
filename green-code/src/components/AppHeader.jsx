@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {useState} from 'react';
 import ModalAddAnimal from './ModalAddAnimal/ModalAddAnimal.tsx'
 
-const fontStyle = { fontSize: "16px", color: "#FAF2F2" };
+const fontStyle = { fontSize: "16px", color: "#FAF2F2", textDecoration: 'none' };
 
 export default function AppHeader() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -20,16 +20,18 @@ export default function AppHeader() {
           height: "48px"
         }}
       >
+        <Link to="/" style={fontStyle}>
         <img
           src="image.svg"
           alt=""
           style={{
             width: "32px",
             height: "32px",
-            marginTop: "5px"
-            // paddingLeft: "3rem"
+            marginTop: "17px"
           }}
         />
+        </Link>
+        <Link to="/" style={fontStyle}>
         <div
           className="title"
           style={{
@@ -37,17 +39,20 @@ export default function AppHeader() {
             lineHeight: "1.2",
             color: "#FAF2F2",
             fontSize: "16px",
-            marginTop: "5px"
+            marginTop: "16px"
           }}
         >
           <strong>Красная книга Москвы</strong>
         </div>
+        </Link>
+        
 
         <Flex
           style={{
             justifyContent: "space-evenly",
             alignItems: "center",
-            width: "100%"
+            width: "100%",
+            marginTop: "10px",
           }}
         >
           <Link to="/animals" style={fontStyle}>
@@ -73,7 +78,7 @@ export default function AppHeader() {
           >
             <span style={{ fontSize: "24px" }}>Войти</span>
           </Button> */}
-          <button style={{color: '#353535', padding: '4px 16px', backgroundColor: '#F8F8F8', borderRadius: '8px', border: 'none'}} onClick={() => {setModalOpen(true)}}>Загрузить фото</button>
+          <button style={{color: '#353535', fontWeight: "700", marginTop: "-10px", padding: '4px 16px', backgroundColor: '#F8F8F8', borderRadius: '8px', border: 'none'}} onClick={() => {setModalOpen(true)}}>Загрузить фото</button>
         </Flex>
       </div>
     </header>

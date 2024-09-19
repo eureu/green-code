@@ -3,4 +3,34 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter";
+  position: relative;
+}
+
+
+/* Основные стили для контейнера с переходами */
+.page-transition {
+  position: absolute; /* Для правильного позиционирования */
+  width: 100%; /* Занимает всю ширину */
+  height: 100%; /* Занимает всю высоту */
+  top: 0; /* Начальная позиция */
+  left: 0; /* Начальная позиция */
+  opacity: 0; /* Начальная непрозрачность */
+  transition: opacity 0.5s ease-in-out; /* Плавный переход */
+}
+
+/* Когда страница активна */
+.page-transition-enter {
+  opacity: 0; /* Начальная непрозрачность при входе */
+}
+
+.page-transition-enter-active {
+  opacity: 1; /* Конечная непрозрачность при входе */
+}
+
+.page-transition-exit {
+  opacity: 1; /* Начальная непрозрачность при выходе */
+}
+
+.page-transition-exit-active {
+  opacity: 0; /* Конечная непрозрачность при выходе */
 }
