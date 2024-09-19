@@ -77,9 +77,9 @@ const Map = ({parks, width, height}: {parks: any[], width: string, height :strin
           <YMapDefaultMarker
             coordinates={[37.68, 55.76]}
           />
+          <MapMarker coordinates={[37.68, 55.76]}/>
         </YMap>
       </YMapComponentsProvider>
-
     </div>
     </>
   );

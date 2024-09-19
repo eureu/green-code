@@ -30,20 +30,23 @@ const mainContentFindParkButton = {
 const list_creatures = [{title: 'Белка', img: '../public/mockData/image.png', describe: 'Описание'}, {title: 'Трясогуска', img: '../public/mockData/image.png', describe: 'Описание'}];
 
 const MapMarker = ({
-  id,
-  name,
-  image,
-  description,
+  // id,
+  // name,
+  // image,
+  // description,
   coordinates,
-  handleClick,
+  // handleClick,
   // list_creatures,
   selectedPark
 }) => {
     useEffect(()=> console.log(selectedPark), [selectedPark])
 
   return (
-    <YMapMarker coordinates={coordinates} onClick={(e) => handleClick(e, id)}>
+    <YMapMarker coordinates={coordinates} 
+    // onClick={(e) => handleClick(e, id)}
+    >
       <svg
+        zIndex = "400"
         width="75"
         height="104"
         viewBox="0 0 75 104"
@@ -58,7 +61,7 @@ const MapMarker = ({
         />
       </svg>
 
-      {selectedPark === id && (
+      {/* selectedPark === id && (
         <div className={style.selectedMarker}>
           <div className={style.innerSelectedMarker}>
             <h3>{name}</h3>
@@ -74,7 +77,10 @@ const MapMarker = ({
              </Button>
           </div>
         </div>
-      )}
+      ) */}
+     
+
+      
     </YMapMarker>
   );
 };

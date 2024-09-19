@@ -29,7 +29,7 @@ export default function Footer() {
           }}
         >
           <Link style={fontStyle}>Контакты</Link>
-          <Link style={fontStyle}>Войти как сотрудник</Link>
+          <Link to="/panel" style={fontStyle}>Войти как сотрудник</Link>
         </Flex>
       </div>
     </footer>

@@ -15,11 +15,11 @@ export default function Creature() {
       <AppHeader />
       <div
         className="page-animal-content-and-news-and-ecoactions"
-        style={{ display: "flex" }}
+        style={{ display: "flex", width: "1400px" }}
       >
         <div
           className="animals-content"
-          style={{ width: "65%", paddingLeft: "3rem" }}
+          style={{ paddingLeft: "3rem" }}
         >
           <div
             className="heading-with-button"
@@ -43,11 +43,11 @@ export default function Creature() {
             </button>
             <h1 style={{ fontSize: "24px" }}>Обыкновенная кутора</h1>
           </div>
-          <img src="./public/Animal.jpg" alt="image" style={{ paddingBottom: "1rem" }} />
+          <img src="../../../../../../public/Animal.jpg" alt="image" style={{ paddingBottom: "1rem" }} />
           <p>гптшное описани</p>
           <div
             className="animal-descriptions"
-            style={{ width: "85%", padding: "1rem 0 1rem 0" }}
+            style={{ width: "65%", padding: "1rem 0 1rem 0" }}
           >
             <h3 style={{ paddingBottom: "1rem" }}>
               Необходимые мероприятия по сохранению вида:
