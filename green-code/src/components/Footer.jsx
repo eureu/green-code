@@ -10,18 +10,19 @@ export default function Footer() {
         height: "48px",
         backgroundColor: "#6FB0A5",
         width: "100%",
-        // position: "fixed",
+        position: "fixed",
         bottom: "0"
       }}
     >
-      <div className="footer-content">
+      <div className="footer-content" style={{ width: "100%", height: "100%" }}>
         <Flex
           style={{
             justifyContent: "space-evenly",
             alignItems: "center",
             width: "100%",
-            paddingTop: "14.5px",
-            paddingBottom: "14.5px"
+            height: "100%"
+            // paddingTop: "14.5px",
+            // paddingBottom: "14.5px"
           }}
         >
           <Link style={fontStyle}>Контакты</Link>

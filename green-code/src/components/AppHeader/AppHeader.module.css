@@ -10,6 +10,38 @@
   /* padding-bottom: 10; */
 }
 
+.uploadPhoto {
+  /* position: relative; */
+  /* display: inline-block; */
+  width: 100%;
+}
+
+.uploadPhoto input[type="file"] {
+  position: absolute; /* Скрываем оригинальный input */
+  z-index: -1; /* Помещаем его под label */
+  width: 100%; /* Занимает всю ширину родителя */
+  height: 100%; /* Занимает всю высоту родителя */
+  opacity: 0; /* Делаем его невидимым */
+  border: none;
+}
+
+.uploadPhoto label {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #6fb0a5; /* Цвет фона кнопки */
+  color: #fff; /* Цвет текста */
+  border-radius: 5px; /* Закругление углов */
+  cursor: pointer; /* Курсор в виде руки при наведении */
+}
+
+/* .uploadPhoto label:hover {
+  background-color: #555; 
+} */
+
+.ant-btn .css-dev-only-do-not-override-qnu6hi .ant-btn-primary {
+  background-color: #000;
+}
+
 .flexText {
   font-size: 16px;
   color: #faf2f2;
@@ -27,13 +59,14 @@ a:active {
   color: #faf2f2;
   display: flex;
   align-items: center;
-
+  cursor: pointer;
   border: none;
   background-color: transparent;
 }
 
 .drawerButton {
   display: none;
+  /* cursor: pointer; */
 }
 
 .title {

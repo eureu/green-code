@@ -1,4 +1,4 @@
-import { Button, Flex, Drawer } from "antd";
+import { Button, Flex, Drawer, Modal, Input, DatePicker } from "antd";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 // import ModalAddAnimal from "./ModalAddAnimal/ModalAddAnimal.tsx";
@@ -7,8 +7,9 @@ import style from "./AppHeader.module.css";
 const fontStyle = { fontSize: "16px", color: "#FAF2F2" };
 
 export default function AppHeader({ paddingLeft }) {
-  // const [modalOpen, setModalOpen] = useState(false)
   const [drawer, setDrawer] = useState(false);
+  const [modal, setModal] = useState(false);
+
   return (
     <>
       <header
@@ -85,9 +86,9 @@ export default function AppHeader({ paddingLeft }) {
               // borderRadius: "8px",
               // border: "none"
               // }}
-              // onClick={() => {
-              //   setModalOpen(true);
-              // }}
+              onClick={() => {
+                setModal(true);
+              }}
             >
               Загрузить фото
             </button>
@@ -127,9 +128,9 @@ export default function AppHeader({ paddingLeft }) {
 
                   //
                 }}
-                // onClick={() => {
-                //   setModalOpen(true);
-                // }}
+                onClick={() => {
+                  setModal(true);
+                }}
               >
                 Загрузить фото
               </button>
@@ -158,6 +159,63 @@ export default function AppHeader({ paddingLeft }) {
         </Button> */}
             </Flex>
           </Drawer>
+          <Modal
+            // className={style.modalWindow}
+            title="Добавление данных"
+            open={modal}
+            // onOk={handleOk}
+            onCancel={() => setModal(false)}
+          >
+            <p style={{ fontSize: "16px", paddingTop: "1.5rem" }}>
+              Расскажите больше о животном или растении, которое вы видели
+            </p>
+            <h3 style={{ fontSize: "16px", paddingTop: "1.5rem" }}>
+              Фотографии животного/растения*
+            </h3>
+            <div
+              className={style.uploadPhoto}
+              style={{
+                height: "13.75rem"
+                // display: "flex"
+              }}
+            >
+              <div
+                style={{
+                  // display: "flex",
+                  // justifyContent: "center",
+                  // alignItems: "center"
+                  display: "grid",
+                  placeItems: "center",
+                  height: "100%"
+                }}
+              >
+                <input type="file" id="fileInput" />
+                <label for="fileInput">Выберите файл</label>
+              </div>
+            </div>
+            <h3 style={{ fontSize: "16px", paddingTop: "1.5rem" }}>
+              Дата наблюдения*
+            </h3>
+            <div>
+              <DatePicker />
+            </div>
+            <h3 style={{ fontSize: "16px", paddingTop: "1.5rem" }}>
+              Место наблюдения*
+            </h3>
+            <div className="map"></div>
+            <h3 style={{ fontSize: "16px", paddingTop: "1.5rem" }}>
+              Вид животного
+            </h3>
+            <Input type="text" />
+            <h3 style={{ fontSize: "16px", paddingTop: "1.5rem" }}>
+              Автор снимка
+            </h3>
+            <Input type="text" />
+            <h3 style={{ fontSize: "16px", paddingTop: "1.5rem" }}>
+              Комментарий
+            </h3>
+            <Input type="text" />
+          </Modal>
           {/* </div> */}
         </div>
       </header>
